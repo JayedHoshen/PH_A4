@@ -9,3 +9,7 @@
 # getElementsByClassName() selects all elements that share a given class name and returns an HTMLcollection. which is also called live list.
 
 # querySelector() returns one specific elements and querySelectorAll() returns all specific elements. They are more powerful because they accept any valid CSS selector.
+
+#### Question-2: How do you create and insert a new element into the DOM?
+
+## Solution-2: To create and insert a new element into the DOM, first use document.createElement() to create the element, then set its content or attributes as needed, and finally insert it into the document using methods like appendChild(), append().
