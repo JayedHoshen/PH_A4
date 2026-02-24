@@ -197,5 +197,107 @@ availableJobsContent.addEventListener("click", function (event) {
   }
 });
 
+// render interview jobs
+function renderInterview() {
+  filterSection.innerHTML = "";
+
+  if (interviewList.length === 0) {
+    emptyCard.classList.remove("hidden");
+    return;
+  } else {
+    emptyCard.classList.add("hidden");
+  }
+
+  // creating innerHTML
+  for (const interview of interviewList) {
+    const div = document.createElement("div");
+    div.className = "jobs-card bg-white p-6 space-y-5 rounded-md";
+    div.innerHTML = `
+            <div class="flex justify-between items-center">
+              <div>
+                <h2 class="company-name font-semibold text-lg">
+                  ${interview.companyName}
+                </h2>
+                <p class="position text-neutral/50 mt-1">
+                  ${interview.position}
+                </p>
+              </div>
+              <div class="delete-btn text-neutral/50 cursor-pointer">
+                <i class="fa-regular fa-trash-can"></i>
+              </div>
+            </div>
+            <p class="location text-neutral/50">
+              ${interview.location}
+            </p>
+            <div>
+              <button class="btn job-status btn-success">${interview.status}</button>
+              <p class="description text-neutral/50 mt-2">
+                ${interview.description}
+              </p>
+            </div>
+            <div class="btn-group space-x-2">
+              <button class="interview-btn btn btn-success btn-outline">
+                INTERVIEW
+              </button>
+              <button class="rejected-btn btn btn-secondary btn-outline">
+                REJECTED
+              </button>
+            </div>
+    `;
+    filterSection.appendChild(div);
+  }
+}
+
+// rendering rejected jobs
+function renderRejected() {
+  filterSection.innerHTML = "";
+
+  if (rejectedList.length === 0) {
+    emptyCard.classList.remove("hidden");
+    return;
+  } else {
+    emptyCard.classList.add("hidden");
+  }
+
+  // creating innerHTML
+  for (const reject of rejectedList) {
+    const div = document.createElement("div");
+    div.className = "jobs-card bg-white p-6 space-y-5 rounded-md";
+    div.innerHTML = `
+            <div class="flex justify-between items-center">
+              <div>
+                <h2 class="company-name font-semibold text-lg">
+                  ${reject.companyName}
+                </h2>
+                <p class="position text-neutral/50 mt-1">
+                  ${reject.position}
+                </p>
+              </div>
+              <div class="delete-btn text-neutral/50 cursor-pointer">
+                <i class="fa-regular fa-trash-can"></i>
+              </div>
+            </div>
+            <p class="location text-neutral/50">
+              ${reject.location}
+            </p>
+            <div>
+              <button class="btn job-status btn-secondary ">${reject.status}</button>
+              <p class="description text-neutral/50 mt-2">
+               ${reject.description}
+              </p>
+            </div>
+            <div class="btn-group space-x-2">
+              <button class="interview-btn btn btn-success btn-outline">
+                INTERVIEW
+              </button>
+              <button class="rejected-btn btn btn-secondary btn-outline">
+                REJECTED
+              </button>
+            </div>
+    `;
+    filterSection.appendChild(div);
+  }
+}
+
 updateTopJobsCount();
 calculateCount();
