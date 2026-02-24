@@ -13,3 +13,7 @@
 #### Question-2: How do you create and insert a new element into the DOM?
 
 ## Solution-2: To create and insert a new element into the DOM, first use document.createElement() to create the element, then set its content or attributes as needed, and finally insert it into the document using methods like appendChild(), append().
+
+### Question_3: What is Event Bubbling? And how does it work?
+
+## Solution_3: Event bubbling is a process where an event starts on the clicked element and then moves upward to its parent elements, one by one.
